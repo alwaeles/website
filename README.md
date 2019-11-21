@@ -4,7 +4,7 @@ Website's repository.
 
 ## Project goal
 
-This project aims for an better whitelist management of the semipublic server run by Axelandre42.
+This project aims for a better whitelist management of the semipublic server run by Axelandre42.
 
 ### Why publishing it?
 
