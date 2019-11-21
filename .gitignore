@@ -1,4 +1,8 @@
 
+/.settings/
+/.buildpath
+/.project
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
