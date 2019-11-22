@@ -2,6 +2,9 @@
 
 Website's repository.
 
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Axelandre42/website?style=flat-square)](https://codeclimate.com/github/Axelandre42/website)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/Axelandre42/website?style=flat-square)](https://codeclimate.com/github/Axelandre42/website)
+
 ## Project goal
 
 This project aims for a better whitelist management of the semipublic server run by Axelandre42.
