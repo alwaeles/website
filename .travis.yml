@@ -1,0 +1,39 @@
+language: php
+sudo: false
+services:
+    - mysql
+
+cache:
+    directory:
+        - $HOME/.composer/cache/files
+
+matrix:
+    include:
+        - '7.1'
+        - '7.2'
+        - '7.3'
+
+env:
+    global:
+        - CC_TEST_REPORTER_ID="973ad6b3b21f6f9302f571fa3ca7b88a1b23f0d0a23894a49621fd5fe6d725a3"
+    matrix:
+        - APP_ENV=test DATABASE_URL="mysql://travis@localhost:3306/test_database"
+
+before_install:
+    - composer self-update
+
+install:
+    - composer install
+    - php bin/console doctrine:database:create
+    - php bin/console doctrine:migrations:migrate
+
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
+
+script:
+    - phpunit --coverage-text --coverage-clover build/logs/clover.xml
+
+after_script:
+    - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t clover --exit-code $TRAVIS_TEST_RESULT; fi
