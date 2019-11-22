@@ -18,7 +18,7 @@ env:
 
 before_install:
     - composer self-update
-    - sh -c "yes '' | pecl install apcu"
+    - phpenv config-add .php.ini
 
 install:
     - composer install
