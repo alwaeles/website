@@ -16,7 +16,7 @@ matrix:
 env:
     global:
         - CC_TEST_REPORTER_ID="973ad6b3b21f6f9302f571fa3ca7b88a1b23f0d0a23894a49621fd5fe6d725a3"
-    matrix:
+    jobs:
         - APP_ENV=test DATABASE_URL="mysql://travis@localhost:3306/test_database"
 
 before_install:
