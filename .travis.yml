@@ -4,12 +4,10 @@ services:
     - mysql
 
 cache:
-    directory:
+    directories:
         - $HOME/.composer/cache/files
 
 php:
-    - '7.1'
-    - '7.2'
     - '7.3'
 
 env:
@@ -20,6 +18,7 @@ env:
 
 before_install:
     - composer self-update
+    - sh -c "yes '' | pecl install apcu"
 
 install:
     - composer install
