@@ -1,5 +1,4 @@
 language: php
-sudo: false
 services:
     - mysql
 
@@ -19,12 +18,11 @@ env:
 before_install:
     - composer self-update
     - sh -c "yes '' | pecl install -f apcu"
-    #- phpenv config-add tests/php.ini
 
 install:
     - composer install
     - php bin/console doctrine:database:create
-    - php bin/console doctrine:migrations:migrate
+    - php bin/console doctrine:migrations:migrate --allow-no-migration --no-interaction
 
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
