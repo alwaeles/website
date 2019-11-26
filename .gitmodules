@@ -1,0 +1,3 @@
+[submodule "translations"]
+	path = translations
+	url = git@github.com:Axelandre42/website-translations.git
