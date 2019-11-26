@@ -9,8 +9,6 @@ class DefaultController extends AbstractController
 
     public function index()
     {
-        return new Response('It works perfectly!', Response::HTTP_OK, [
-            'Content-Type' => 'text/plain'
-        ]);
+        return $this->render("index.html.twig");
     }
 }
