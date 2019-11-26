@@ -3,6 +3,7 @@ services:
     - mysql
 
 cache:
+    yarn: true
     directories:
         - $HOME/.composer/cache/files
 
@@ -16,13 +17,20 @@ env:
         - APP_ENV=test DATABASE_URL="mysql://travis@localhost:3306/test_database"
 
 before_install:
+    - curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    - sudo apt-get update
+    - sudo apt-get install -y yarn
     - composer self-update
     - sh -c "yes '' | pecl install -f apcu"
 
 install:
     - composer install
+    - yarn install
     - php bin/console doctrine:database:create
     - php bin/console doctrine:migrations:migrate --allow-no-migration --no-interaction
+    - yarn encore prod
 
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
