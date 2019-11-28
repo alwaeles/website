@@ -20,14 +20,12 @@ class MenuBuilder
         $menu->setChildrenAttribute('class', 'navbar-nav mr-auto');
 
         $menu->addChild('Home', [
-            'route' => 'app_index',
-            'routes' => 'app_index'
-        ]);
+            'route' => 'app_index'
+        ])->setExtra('routes', 'app_index');
         $menu->addChild('Hello', [
             'attributes' => [
                 'icon' => 'far fa-smile'
-            ],
-            'translation_domain' => false
+            ]
         ]);
 
         return $menu;
