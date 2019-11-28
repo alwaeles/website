@@ -26,7 +26,8 @@ class MenuBuilder
         $menu->addChild('Hello', [
             'attributes' => [
                 'icon' => 'far fa-smile'
-            ]
+            ],
+            'translation_domain' => false
         ]);
 
         return $menu;
