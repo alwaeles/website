@@ -2,9 +2,9 @@
 
 Website's repository.
 
+[![Travis (.com)](https://img.shields.io/travis/com/Axelandre42/website?style=flat-square)](https://travis-ci.com/Axelandre42/website)
 [![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Axelandre42/website?style=flat-square)](https://codeclimate.com/github/Axelandre42/website)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/Axelandre42/website?style=flat-square)](https://codeclimate.com/github/Axelandre42/website)
-[![Travis (.com)](https://img.shields.io/travis/com/Axelandre42/website?style=flat-square)](https://travis-ci.com/Axelandre42/website)
 
 ## Project goal
 
